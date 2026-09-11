@@ -1,7 +1,3 @@
-data/processed/*.json
-data/processed/processing_summary.json
-data/*.json
-
 *.pyc
 __pycache__/
 *.pyo
