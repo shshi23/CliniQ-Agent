@@ -1,0 +1,84 @@
+{
+  "narushenie_akkomodatsii.md": {
+    "title": "Клинические рекомендации: Нарушения аккомодации",
+    "icd_code": [
+      "H52.5"
+    ],
+    "minzdrav_id": "1051_1",
+    "approval_year": "2026",
+    "review_year": "2028",
+    "age_category": [
+      "Дети"
+    ],
+    "specialty": "Офтальмология",
+    "developer": "Ассоциация врачей-офтальмологов",
+    "status": "Действующие",
+    "filename": "narushenie_akkomodatsii.md"
+  },
+  "astigmatizm.md": {
+    "title": "Клинические рекомендации: Астигматизм",
+    "icd_code": [
+      "H52.2"
+    ],
+    "minzdrav_id": "625_2",
+    "approval_year": "2024",
+    "review_year": "2026",
+    "age_category": [
+      "Взрослые",
+      "Дети"
+    ],
+    "specialty": "Офтальмология",
+    "developer": "Ассоциация врачей-офтальмологов",
+    "status": "Действующие",
+    "filename": "astigmatizm.md"
+  },
+  "ambliopia.md": {
+    "title": "Клинические рекомендации: Амблиопия",
+    "icd_code": [
+      "H53.0"
+    ],
+    "minzdrav_id": "1063_1",
+    "approval_year": "2026",
+    "review_year": "2028",
+    "age_category": [
+      "Дети"
+    ],
+    "specialty": "Офтальмология",
+    "developer": "Ассоциация врачей-офтальмологов",
+    "status": "Действующие",
+    "filename": "ambliopia.md"
+  },
+  "miopia.md": {
+    "title": "Клинические рекомендации: Миопия",
+    "icd_code": [
+      "H52.1"
+    ],
+    "minzdrav_id": "109_2",
+    "approval_year": "2024",
+    "review_year": "2026",
+    "age_category": [
+      "Взрослые",
+      "Дети"
+    ],
+    "specialty": "Офтальмология",
+    "developer": "Ассоциация врачей-офтальмологов",
+    "status": "Действующие",
+    "filename": "miopia.md"
+  },
+  "vrozhdennaya_glaukoma.md": {
+    "title": "Клинические рекомендации: Врожденная глаукома",
+    "icd_code": [
+      "Q15.0"
+    ],
+    "minzdrav_id": "112_2",
+    "approval_year": "2024",
+    "review_year": "2026",
+    "age_category": [
+      "Дети"
+    ],
+    "specialty": "Офтальмология",
+    "developer": "Ассоциация врачей-офтальмологов, Общество офтальмологов России",
+    "status": "Действующие",
+    "filename": "vrozhdennaya_glaukoma.md"
+  }
+}
