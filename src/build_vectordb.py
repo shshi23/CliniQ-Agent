@@ -6,12 +6,28 @@ import numpy as np
 from pathlib import Path
 from tqdm import tqdm
 
+def load_model(local_path: str = "../local_model",
+               fallback_name: str = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"):
+
+    if Path(local_path).exists() and (Path(local_path) / "config.json").exists():
+        return SentenceTransformer(local_path)
+    else:
+        model = SentenceTransformer(fallback_name)
+        return model
+
+def clean_value(v):
+    if isinstance(v, str):
+        return v.strip()
+    if isinstance(v, list):
+        return ", ".join(str(x).strip() for x in v)
+    return v
+
 def build_vectordb(
         chunks_path: str = "../data/chunks.json",
         persist_directory: str = "../data/vector_db",
         model_name: str = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
 ):
-    model = SentenceTransformer(model_name)
+    model = load_model()
 
     with open(chunks_path, "r", encoding="utf-8") as f:
         chunks = json.load(f)
@@ -21,16 +37,10 @@ def build_vectordb(
     ids = []
 
     for i, chunk in tqdm(enumerate(chunks), desc="chunks processing"):
-        texts.append(chunk["page_content"])
-        metadata = chunk["metadata"].copy()
+        raw = {k.strip(): v for k, v in chunk.items()}
+        texts.append(raw["page_content"].strip())
 
-        if isinstance(metadata.get("icd_code"), list):
-            metadata["icd_code"] = ", ".join(metadata["icd_code"])
-        if isinstance(metadata.get("age_category"), list):
-            metadata["age_category"] = ", ".join(metadata["age_category"])
-        if isinstance(metadata.get("hierarchy"), list):
-            metadata["hierarchy"] = " -> ".join(metadata["hierarchy"])
-
+        metadata = {k.strip(): clean_value(v) for k, v in raw["metadata"].items()}
         metadatas.append(metadata)
         ids.append(metadata["chunk_id"])
 
